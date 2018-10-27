@@ -29,9 +29,10 @@ function addList(){
 
 function addItem(list){
     let currentList = list.parent();
+    let containedItems = $( "" + currentList + ":nth-child(3)" ).length + 1;
     $( "" + currentList + ":nth-child(3)" ).append(`
-    
-    
-    
+    <div class="${currentList}item${containedItems} listItem"> 
+        <input class="">
+    </div>
     `);
 }
