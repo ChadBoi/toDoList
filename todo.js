@@ -12,9 +12,7 @@ function clearCompleted(list){
 }
 
 function addItem(list){
-    console.log("item added");
     let currentList = $(list).parent();
-    console.log(currentList);
     let containedItems = $( currentList.children(".item-container") ).length + 1;
     $( currentList.children(".item-container")).append(`
     <div class="${currentList}item${containedItems} listItem"> 
