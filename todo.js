@@ -16,7 +16,7 @@ function addList(){
     $( ".container" ).append(`
     <div class="list${totalLists} list">
         <div class="list-title">List ${totalLists+1}</div>
-        <div class="addListItem">Add Item</div>
+        <div class="addListItem" onclick=addItem(this)">Add Item</div>
         <div class="item-container">
         
         </div>
@@ -28,5 +28,10 @@ function addList(){
 }
 
 function addItem(list){
-
+    let currentList = list.parent();
+    $( "" + currentList + ":nth-child(3)" ).append(`
+    
+    
+    
+    `);
 }
