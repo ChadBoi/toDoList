@@ -20,6 +20,13 @@ function toggleComplete(item){
     }
 }
 
+function updateTitle(list){
+    let titleText = $(list).siblings(".titleInput").val();
+    $(list).siblings(".titleInput").replaceWith(`<div class="list-title">${titleText}</div>`);
+    $(list).remove();
+
+}
+
 function clearCompleted(list){
 
     let currentList = $(list).siblings(".item-container");
@@ -74,7 +81,8 @@ function addItem(list){
 function addList(){
     $( ".container" ).append(`
     <div class="list${totalLists} list">
-        <div class="list-title">List ${totalLists+1}</div>
+        <input class="titleInput" placeholder="list${totalLists+1}">
+        <div class="updateTitle" onclick="updateTitle(this)"><i class="fas fa-check"></i></div>
         <div class="addListItem" onclick="addItem(this)">Add Item</div>
         <div class="item-container">
         
